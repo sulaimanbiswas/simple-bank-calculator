@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Dashboard</title>
+
+    <!-- Tailwind CSS Link -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header class="mt-4">
+        <h1 class="text-4xl text-center">Summary of <span class="font-semibold text-violet-600">My Account</span></h1>
+    </header>
+    <main>
+        <section class="mt-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 w-9/12 mx-auto text-white">
+                <div class="bg-green-400 p-8 space-y-3 rounded">
+                    <h4 class="text-3xl">Deposit</h4>
+                    <p class="text-5xl">$<span id="current-deposit">00</span></p>
+                </div>
+                <div class="bg-orange-400 p-8 space-y-3 rounded">
+                    <h4 class="text-3xl">Withdraw</h4>
+                    <p class="text-5xl">$<span id="current-withdraw">00</span></p>
+                </div>
+                <div class="bg-violet-400 p-8 space-y-3 rounded">
+                    <h4 class="text-3xl">Balance</h4>
+                    <p class="text-5xl">$<span id="current-balance">00</span></p>
+                </div>
+            </div>
+        </section>
+        <section class="mt-12">
+            <div class="grid grid-cols-1  md:grid-cols-2 gap-3 w-9/12 mx-auto text-white">
+                <form>
+                    <div class="bg-fuchsia-400 p-8 space-y-3 rounded flex flex-col">
+                        <h4 class="text-3xl">Please Deposit</h4>
+                        <h5 class="text-center text-red-700" id="deposit-error-notice"></h5>
+                        <h5 class="text-center text-green-700" id="deposit-success-notice"></h5>
+                        <input class="p-3 text-lg rounded text-black" type="text" id="deposit-input" placeholder="$ amount you want to deposit">
+                        <div class="btn text-center">
+                            <button type="submit" id="deposit-btn" class="bg-violet-500 text-lg px-8 py-4 rounded text-white hover:bg-violet-600">Please Deposit</button>
+                        </div>
+                    </div>
+                </form>
+                <form>
+                    <div class="bg-indigo-400 p-8 space-y-3 rounded flex flex-col">
+                        <h4 class="text-3xl">Please Withdraw</h4>
+                        <h5 class="text-center text-red-700" id="withdraw-error-notice"></h5>
+                        <h5 class="text-center text-green-700" id="withdraw-success-notice"></h5>
+                        <input class="p-3 text-lg rounded text-black" type="text" id="withdraw-input" placeholder="$ amount you want to withdraw">
+                        <div class="btn text-center">
+                            <button type="submit" id="withdraw-btn" class="bg-violet-500 px-8 text-lg py-4 rounded text-white hover:bg-violet-600">Please Withdraw</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </section>
+    </main>
+    <script src="js/deposit.js"></script>
+    <script src="js/withdraw.js"></script>
+</body>
+
+</html>
